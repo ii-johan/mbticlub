@@ -11,7 +11,7 @@ const initialScores = {
   J: 0, P: 0,
   C: 0, H: 0,
   L: 0, D: 0,
-  U: 0, R: 0,
+  U: 0, O: 0,
   B: 0, M: 0,
 };
 
@@ -104,15 +104,15 @@ const questions = [
   {
     id: 7,
     text: "갑작스러운 비판이나 공격적인 말에도 크게 동요하지 않고 능청스럽게 넘기는 편인가요?",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -217,15 +217,15 @@ const questions = [
   {
     id: 15,
     text: "상대방이 화를 내도 능청스럽게 상대의 화를 누그러뜨리는데 능숙하다",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -329,15 +329,15 @@ const questions = [
   {
     id: 23,
     text: "장난스럽게 유머를 던져서 분위기를 새롭게 하는데 아주 능하다.",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -441,15 +441,15 @@ const questions = [
   {
     id: 31,
     text: "상대가 무슨 말을 해도 나에게는 별로 타격감이 오지 않는다.",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -553,15 +553,15 @@ const questions = [
   {
     id: 39,
     text: "사람들에게 허당끼가 많다는 말을 듣는다.",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -665,15 +665,15 @@ const questions = [
   {
     id: 47,
     text: "토론 중 사람들이 격앙될 때도 나는 차분함을 잃지 않는다.",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -777,15 +777,15 @@ const questions = [
   {
     id: 55,
     text: "카톡단체방을 뛰쳐나간 친구에게 능청스럽게 전화할 수 있다.",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -889,15 +889,15 @@ const questions = [
   {
     id:63,
     text: "먼저 화해를 청하는게 싫지만 그래도 내가 먼저 하는 편이다.",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -1001,15 +1001,15 @@ const questions = [
   {
     id: 71,
     text: "내 실수에 대해 넉살스럽게 인정하는 것이 어렵지 않다.",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -1113,15 +1113,15 @@ const questions = [
   {
     id: 79,
     text: "사람들이 나를 과소평가해도 그다지 신경쓰지 않는다.",
-    dimension: "UR",
+    dimension: "UO",
     points: {
-      'Yes++': { U: 3, R: -3 },
-      'Yes+': { U: 2, R: -2 },
-      'Yes': { U: 1, R: -1 },
-      'Mid': { U: 0, R: 0 },
-      'No': { U: -1, R: 1 },
-      'No+': { U: -2, R: 2 },
-      'No++': { U: -3, R: 3 },
+      'Yes++': { U: 3, O: -3 },
+      'Yes+': { U: 2, O: -2 },
+      'Yes': { U: 1, O: -1 },
+      'Mid': { U: 0, O: 0 },
+      'No': { U: -1, O: 1 },
+      'No+': { U: -2, O: 2 },
+      'No++': { U: -3, O: 3 },
     }
   },
   {
@@ -1204,7 +1204,7 @@ const TestPage: React.FC = () => {
     mbti += finalScores.J >= finalScores.P ? 'J' : 'P';
     mbti += finalScores.C >= finalScores.H ? 'C' : 'H';
     mbti += finalScores.L >= finalScores.D ? 'L' : 'D';
-    mbti += finalScores.U >= finalScores.R ? 'U' : 'R';
+    mbti += finalScores.U >= finalScores.O ? 'U' : 'O';
     mbti += finalScores.B >= finalScores.M ? 'B' : 'M';
     return mbti;
   };

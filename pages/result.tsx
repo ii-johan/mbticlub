@@ -15,7 +15,7 @@ const mbtiDescriptions: { [key: string]: string } = {
   // 예: CH, LD, UR, BM 지표의 조합에 대한 설명도 필요합니다.
   // 모든 2^8 = 256가지 조합을 다 넣기는 어렵지만, 대표적인 조합이나 주요 지표별 설명을 조합할 수 있습니다.
   // 여기서는 예시로 몇 가지만 남겨두었습니다. 실제 테스트 결과를 반영하려면 더 많은 조합을 추가해야 합니다.
-  'default': 'MBTI는 선천적 성향으로 나를 잘 알수있는 지표이며, CLUB은 후천적 습성으로 나를 바꿀수있는 지표입니다.'
+  'default': 'MBTI는 선천적성향으로 자신을 잘 알수있는 지표이며, CLUB는 후천적습성으로 자신을 바꿀수있는 지표이다.'
 };
 
 const ResultPage: React.FC = () => {
@@ -109,12 +109,12 @@ const ResultPage: React.FC = () => {
     calculated['L'] = Math.round(((ldDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
     calculated['D'] = 100 - calculated['L'];
 
-    // U vs R
+    // U vs O (R 대신 O 사용)
     const uScore = currentScores['U'] || 0;
-    const rScore = currentScores['R'] || 0;
-    const urDiff = uScore - rScore;
-    calculated['U'] = Math.round(((urDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
-    calculated['R'] = 100 - calculated['U'];
+    const oScore = currentScores['O'] || 0; // 'R' 대신 'O' 점수를 사용
+    const uoDiff = uScore - oScore;
+    calculated['U'] = Math.round(((uoDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
+    calculated['O'] = 100 - calculated['U']; // 'R' 대신 'O' 백분율 계산
 
     // B vs M
     const bScore = currentScores['B'] || 0;
@@ -142,7 +142,7 @@ const ResultPage: React.FC = () => {
     { primary: 'J', secondary: 'P', primaryLabel: '계획형', secondaryLabel: '융통형' },
     { primary: 'C', secondary: 'H', primaryLabel: '순화적 언어', secondaryLabel: '공격적 언어' },
     { primary: 'L', secondary: 'D', primaryLabel: '공감적 대화', secondaryLabel: '설교적 대화' },
-    { primary: 'U', secondary: 'R', primaryLabel: '능청적 반응', secondaryLabel: '분노적 반응' },
+    { primary: 'U', secondary: 'O', primaryLabel: '능청적 반응', secondaryLabel: '과잉 반응' }, // R 대신 O로 변경
     { primary: 'B', secondary: 'M', primaryLabel: '당당한 태도', secondaryLabel: '찌질한 태도' },
   ];
 
@@ -181,7 +181,7 @@ const ResultPage: React.FC = () => {
         }}
       >
         <h1 style={{ fontSize: '1.8rem', marginBottom: '20px', color: '#FFFACD', textShadow: '2px 2px 5px rgba(0,0,0,0.5)' }}>
-          MY MBTI-CLUB Type?
+          My MBTI-CLUB Type?
         </h1>
         {/* MBTI 결과 표시 (연한 노란색 박스에 초록색 글씨) */}
         <div
