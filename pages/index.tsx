@@ -27,7 +27,7 @@ const Home: React.FC = () => {
       }}
     >
       <Head>
-        <title>MBTI Club Test</title>
+        <title>MBTI Club</title>
         <meta name="description" content="MBTI Club personality test" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -37,12 +37,12 @@ const Home: React.FC = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          backgroundColor: 'rgba(255, 255, 255, 0.05)', // 카드 배경
-          borderRadius: '20px',
-          padding: '30px',
+          backgroundColor: 'rgba(0, 0, 0, 0.4)', // 카드 배경
+          borderRadius: '30px',
+          padding: '10px',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
           maxWidth: '520px',
-          width: '95%',
+          width: '70%',
           textAlign: 'center',
           flexShrink: 0,
           maxHeight: '90vh', // 최대 높이 제한
@@ -52,10 +52,10 @@ const Home: React.FC = () => {
         {/* 제목 */}
         <h1
           style={{
-            fontSize: '3.8em',
+            fontSize: '3.5em',
             fontWeight: 'bold',
             color: '#FFFFFF',
-            marginBottom: '15px',
+            marginBottom: '5px',
             textShadow: '2px 2px 5px rgba(0,0,0,0.6)',
             letterSpacing: '-1px',
           }}
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
         <div
           style={{
             width: '100%',
-            maxWidth: '384px',
+            maxWidth: '450px',
             height: 'auto',
             position: 'relative',
             borderRadius: '15px',
