@@ -132,7 +132,7 @@ const Home: React.FC = () => {
               e.currentTarget.style.transform = 'scale(1.03)'; // 클릭 후 원복 (호버 상태로)
             }}
           >
-            Fast Test (40 Questions)
+            Test Go (80)
           </button>
 
           {/* Full Test 버튼 */}
@@ -168,7 +168,7 @@ const Home: React.FC = () => {
               e.currentTarget.style.transform = 'scale(1.03)';
             }}
           >
-            Full Test (80 Questions)
+            Test Go (80)
           </button>
         </div>
       </main>
