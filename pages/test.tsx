@@ -1184,7 +1184,7 @@ const TestPage: React.FC = () => {
     // 추가된 4개 지표 처리 (가정: C/H, L/D, U/R, B/M)
     mbti += finalScores.C >= finalScores.H ? 'C' : 'H';
     mbti += finalScores.L >= finalScores.D ? 'L' : 'D';
-    mbti += finalScores.U >= finalScores.R ? 'U' : 'R';
+    mbti += finalScores.U >= finalScores.O ? 'U' : 'O';
     mbti += finalScores.B >= finalScores.M ? 'B' : 'M';
     return mbti;
   };
@@ -1213,7 +1213,7 @@ const TestPage: React.FC = () => {
       }}
     >
       <Head>
-        <title>MBTI Test</title>
+        <title>MBTI Club</title>
         <meta name="description" content="MBTI Club personality test" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -1254,12 +1254,12 @@ const TestPage: React.FC = () => {
             borderRadius: '15px',
             padding: '30px',
             marginBottom: '20px',
-            width: '100%', // 내부 질문 텍스트 박스는 100% 유지
-            minHeight: '364px',
+            width: '80%', // 내부 질문 텍스트 박스는 100% 유지
+            minHeight: '100px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '1.6rem',
+            fontSize: '1.4rem',
             fontWeight: '600',
             lineHeight: '1.5',
             boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
@@ -1276,8 +1276,8 @@ const TestPage: React.FC = () => {
             display: 'flex',
             flexWrap: 'nowrap',
             justifyContent: 'space-between',
-            gap: '1px',
-            width: '85%', // 답변 버튼 박스 width 변경
+            gap: '0.5px',
+            width: '100%', // 답변 버튼 박스 width 변경
             alignItems: 'center',
             overflowX: 'auto',
             paddingBottom: '5px',
