@@ -1224,12 +1224,12 @@ const TestPage: React.FC = () => {
           flexDirection: 'column',
           alignItems: 'center',
           backgroundColor: 'rgba(255, 255, 255, 0.05)',
-          borderRadius: '20px',
-          padding: '20px',
-          paddingTop: '15px',
+          borderRadius: '15px',
+          padding: '10px',
+          paddingTop: '5px',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
           maxWidth: '370px',
-          width: '70%', // 질문 박스 width 변경
+          width: '82%', // 질문 박스 width 변경
           textAlign: 'center',
           flexShrink: 0,
         }}
@@ -1255,11 +1255,11 @@ const TestPage: React.FC = () => {
             padding: '30px',
             marginBottom: '5px',
             width: '80%', // 내부 질문 텍스트 박스는 100% 유지
-            minHeight: '70px',
+            minHeight: '90px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '1rem',
+            fontSize: '1.2rem',
             fontWeight: '600',
             lineHeight: '1.5',
             boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
@@ -1275,7 +1275,7 @@ const TestPage: React.FC = () => {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '1px',
+            gap: '1.5px',
             width: '100%', // 답변 버튼 박스 width 변경
             alignItems: 'center',
             overflowX: 'auto',
@@ -1290,11 +1290,11 @@ const TestPage: React.FC = () => {
           {['Yes++', 'Yes+', 'Yes', 'Mid', 'No', 'No+', 'No++'].map((label) => {
             let buttonBackground = '';
             if (label.startsWith('Yes')) {
-              buttonBackground = 'linear-gradient(150deg, #4CAF50, #2E8B57)'; // 초록색 그라데이션
+              buttonBackground = 'linear-gradient(150deg, #4CAF50,rgb(6, 122, 56))'; // 초록색 그라데이션
             } else if (label.startsWith('No')) {
-              buttonBackground = 'linear-gradient(150deg, #FF9800, #E65100)'; // 오렌지색 그라데이션
+              buttonBackground = 'linear-gradient(150deg, #FF9800,rgb(182, 67, 5))'; // 오렌지색 그라데이션
             } else {
-              buttonBackground = 'linear-gradient(150deg, #555555, #333333)'; // 진회색 그라데이션 (Mid)
+              buttonBackground = 'linear-gradient(150deg,rgb(126, 119, 119), #333333)'; // 진회색 그라데이션 (Mid)
             }
 
             return (
@@ -1304,14 +1304,14 @@ const TestPage: React.FC = () => {
                 style={{
                   flexShrink: 0,
                   flexGrow: 0,
-                  minWidth: '49.5px',
-                  height: '49.5px',
+                  minWidth: '350px',
+                  height: '40px',
                   padding: '5px',
-                  fontSize: '0.7rem',
+                  fontSize: '1rem',
                   fontWeight: 'bold',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '200px',
+                  borderRadius: '10px',
                   cursor: 'pointer',
                   display: 'flex',
                   justifyContent: 'center',
