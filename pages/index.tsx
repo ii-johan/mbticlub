@@ -8,7 +8,6 @@ const Home: React.FC = () => {
 
   // 테스트 시작 버튼 클릭 핸들러
   const startTest = (testType: 'fast' | 'full') => {
-    // query 파라미터를 통해 어떤 테스트인지 test.tsx로 전달할 수 있습니다.
     router.push(`/test?type=${testType}`);
   };
 
@@ -17,14 +16,14 @@ const Home: React.FC = () => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start', // 상단에 더 가깝게 배치
+        justifyContent: 'center', // 수직 중앙 정렬
         alignItems: 'center',
-        minHeight: '100vh',
+        height: '100vh', // 뷰포트 전체 높이를 사용
         backgroundColor: '#121212', // 어두운 검정색 배경
-        padding: '10px 10px',
-        paddingTop: '10px',
+        padding: '20px', // 전체 패딩 증가
         boxSizing: 'border-box',
         color: '#FFFFFF',
+        overflow: 'hidden', // 스크롤바가 생기지 않도록 숨김
       }}
     >
       <Head>
@@ -41,12 +40,13 @@ const Home: React.FC = () => {
           backgroundColor: 'rgba(255, 255, 255, 0.05)', // 카드 배경
           borderRadius: '20px',
           padding: '30px',
-          paddingTop: '5px',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
           maxWidth: '520px',
           width: '95%',
           textAlign: 'center',
           flexShrink: 0,
+          maxHeight: '90vh', // 최대 높이 제한
+          overflowY: 'auto', // 내용이 넘칠 경우 스크롤 가능하게
         }}
       >
         {/* 제목 */}
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
             position: 'relative',
             borderRadius: '15px',
             overflow: 'hidden',
-            marginBottom: '30px',
+            marginBottom: '25px', // 여백 조정
             boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
             backgroundColor: '#000000',
             aspectRatio: '4 / 3',
@@ -107,17 +107,32 @@ const Home: React.FC = () => {
               fontSize: '1.3rem',
               fontWeight: 'bold',
               color: '#FFFFFF',
-              background: 'linear-gradient(45deg,rgb(131, 214, 229),rgb(25, 29, 152))',
+              // 새로운 그라데이션 및 그림자
+              background: 'linear-gradient(135deg, #6DD5FA 0%,rgb(26, 119, 181) 100%)', // 시원한 파란색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
-              transition: 'opacity 0.3s ease, transform 0.2s ease',
-              boxShadow: '0 5px 15px rgba(0, 123, 255, 0.7)',
+              transition: 'all 0.3s ease', // 모든 속성에 전환 효과 적용
+              boxShadow: '0 8px 20px rgba(41, 128, 185, 0.6)', // 파란색 그림자
+              transform: 'scale(1)', // 기본 크기
             }}
-            // ✨ 클릭 시 테스트 페이지로 이동하도록 수정 ✨
             onClick={() => startTest('fast')}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'scale(1.03)'; // 호버 시 약간 확대
+              e.currentTarget.style.boxShadow = '0 12px 25px rgba(41, 128, 185, 0.8)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'scale(1)'; // 원복
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(41, 128, 185, 0.6)';
+            }}
+            onMouseDown={(e) => {
+              e.currentTarget.style.transform = 'scale(0.98)'; // 클릭 시 약간 축소
+            }}
+            onMouseUp={(e) => {
+              e.currentTarget.style.transform = 'scale(1.03)'; // 클릭 후 원복 (호버 상태로)
+            }}
           >
-            Fast Test (40)
+            Fast Test (40 Questions)
           </button>
 
           {/* Full Test 버튼 */}
@@ -128,17 +143,32 @@ const Home: React.FC = () => {
               fontSize: '1.3rem',
               fontWeight: 'bold',
               color: '#FFFFFF',
-              background: 'linear-gradient(45deg,rgb(144, 228, 164),rgb(21, 74, 13))',
+              // 새로운 그라데이션 및 그림자
+              background: 'linear-gradient(135deg, #81F49E 0%,rgb(26, 166, 84) 100%)', // 상큼한 초록색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
-              transition: 'opacity 0.3s ease, transform 0.2s ease',
-              boxShadow: '0 5px 15px rgba(40, 167, 69, 0.7)',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 8px 20px rgba(46, 204, 113, 0.6)', // 초록색 그림자
+              transform: 'scale(1)',
             }}
-            // ✨ 클릭 시 테스트 페이지로 이동하도록 수정 ✨
             onClick={() => startTest('full')}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'scale(1.03)';
+              e.currentTarget.style.boxShadow = '0 12px 25px rgba(46, 204, 113, 0.8)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(46, 204, 113, 0.6)';
+            }}
+            onMouseDown={(e) => {
+              e.currentTarget.style.transform = 'scale(0.98)';
+            }}
+            onMouseUp={(e) => {
+              e.currentTarget.style.transform = 'scale(1.03)';
+            }}
           >
-            Full Test (80)
+            Full Test (80 Questions)
           </button>
         </div>
       </main>

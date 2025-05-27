@@ -1246,11 +1246,11 @@ const TestPage: React.FC = () => {
           alignItems: 'center',
           backgroundColor: 'rgba(255, 255, 255, 0.05)',
           borderRadius: '20px',
-          padding: '15px',
+          padding: '20px',
           paddingTop: '15px',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
           maxWidth: '420px',
-          width: '80%',
+          width: '95%',
           textAlign: 'center',
           flexShrink: 0,
         }}
@@ -1273,7 +1273,7 @@ const TestPage: React.FC = () => {
             backgroundColor: '#FFFACD',
             color: '#333333',
             borderRadius: '15px',
-            padding: '20px',
+            padding: '30px',
             marginBottom: '20px',
             width: '100%',
             minHeight: '364px',
@@ -1298,7 +1298,7 @@ const TestPage: React.FC = () => {
             flexWrap: 'nowrap',
             justifyContent: 'space-between',
             gap: '1px',
-            width: '100%',
+            width: '95%',
             alignItems: 'center',
             overflowX: 'auto',
             paddingBottom: '5px',
@@ -1311,34 +1311,13 @@ const TestPage: React.FC = () => {
         >
           {['Yes++', 'Yes+', 'Yes', 'Mid', 'No', 'No+', 'No++'].map((label) => {
             let buttonBackground = '';
-           // 교체할 switch 블록 시작
-            switch (label) {
-              case 'Yes++':
-                buttonBackground = 'linear-gradient(150deg,rgb(42, 119, 44),rgb(32, 105, 63))'; // 진한 초록
-                break;
-              case 'Yes+':
-                buttonBackground = 'linear-gradient(150deg,rgb(69, 147, 73), #4CAF50)'; // 중간 초록
-                break;
-              case 'Yes':
-                buttonBackground = 'linear-gradient(150deg, #81C784,rgb(124, 219, 128))'; // 연한 초록
-                break;
-              case 'Mid':
-                buttonBackground = 'linear-gradient(150deg, #555555,rgb(122, 115, 115))'; // 진회색 (중립)
-                break;
-              case 'No':
-                buttonBackground = 'linear-gradient(150deg, #FFB74D,rgb(239, 182, 97))'; // 연한 오렌지
-                break;
-              case 'No+':
-                buttonBackground = 'linear-gradient(150deg,rgb(206, 134, 10),rgb(211, 101, 4))'; // 중간 오렌지
-                break;
-              case 'No++':
-                buttonBackground = 'linear-gradient(150deg,rgb(165, 94, 7),rgb(125, 59, 6))'; // 진한 오렌지
-                break;
-              default:
-                buttonBackground = '#CCCCCC'; // 기본값 (혹시 모를 경우)
+            if (label.startsWith('Yes')) {
+              buttonBackground = 'linear-gradient(150deg, #4CAF50, #2E8B57)'; // 초록색 그라데이션
+            } else if (label.startsWith('No')) {
+              buttonBackground = 'linear-gradient(150deg, #FF9800, #E65100)'; // 오렌지색 그라데이션
+            } else {
+              buttonBackground = 'linear-gradient(150deg, #555555, #333333)'; // 진회색 그라데이션 (Mid)
             }
-            // 교체할 switch 블록 끝
-            // ... (나머지 button return 부분은 그대로 둡니다.)
 
             return (
               <button
@@ -1346,13 +1325,11 @@ const TestPage: React.FC = () => {
                 onClick={() => handleAnswer(label as keyof typeof questions[0]['points'])}
                 style={{
                   flexShrink: 0,
-                  flexGrow: 1,
-                  minWidth: '49px',
-                  height: '49px',
-                  width: 'calc((100% - 6px) / 7)', // ✨ 7개의 버튼이 고르게 분포되도록 계산된 너비 (옵션 1)
-                                             //    또는 minWidth와 flexGrow만으로 조절 (옵션 2)
-                  padding: '0 3px',
-                  fontSize: '0.9rem',
+                  flexGrow: 0,
+                  minWidth: '49.5px',
+                  height: '49.5px',
+                  padding: '0 1px',
+                  fontSize: '0.7rem',
                   fontWeight: 'bold',
                   color: '#FFFFFF',
                   border: 'none',
