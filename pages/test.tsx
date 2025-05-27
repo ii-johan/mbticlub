@@ -1228,8 +1228,8 @@ const TestPage: React.FC = () => {
           padding: '20px',
           paddingTop: '15px',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
-          maxWidth: '420px',
-          width: '85%', // 질문 박스 width 변경
+          maxWidth: '370px',
+          width: '70%', // 질문 박스 width 변경
           textAlign: 'center',
           flexShrink: 0,
         }}
@@ -1237,10 +1237,10 @@ const TestPage: React.FC = () => {
         {/* 1. 상단에 번호/총번호수 */}
         <div
           style={{
-            fontSize: '1.2rem',
+            fontSize: '0.8rem',
             fontWeight: 'bold',
             color: '#BBBBBB',
-            marginBottom: '15px',
+            marginBottom: '5px',
           }}
         >
           {currentQuestionIndex + 1} / {totalQuestions}
@@ -1251,20 +1251,20 @@ const TestPage: React.FC = () => {
           style={{
             backgroundColor: '#FFFACD',
             color: '#333333',
-            borderRadius: '15px',
+            borderRadius: '30px',
             padding: '30px',
-            marginBottom: '20px',
+            marginBottom: '5px',
             width: '80%', // 내부 질문 텍스트 박스는 100% 유지
-            minHeight: '100px',
+            minHeight: '70px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '1.4rem',
+            fontSize: '1rem',
             fontWeight: '600',
             lineHeight: '1.5',
             boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
             wordBreak: 'keep-all',
-            border: '2px solid #FFD700',
+            border: '1px solid #FFD700',
           }}
         >
           {currentQuestion.text}
@@ -1274,9 +1274,8 @@ const TestPage: React.FC = () => {
         <div
           style={{
             display: 'flex',
-            flexWrap: 'nowrap',
-            justifyContent: 'space-between',
-            gap: '0.5px',
+            flexDirection: 'column',
+            gap: '1px',
             width: '100%', // 답변 버튼 박스 width 변경
             alignItems: 'center',
             overflowX: 'auto',
@@ -1284,7 +1283,7 @@ const TestPage: React.FC = () => {
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
             '&::-webkit-scrollbar': {
-              display: 'none',
+            display: 'none',
             },
           }}
         >
@@ -1307,12 +1306,12 @@ const TestPage: React.FC = () => {
                   flexGrow: 0,
                   minWidth: '49.5px',
                   height: '49.5px',
-                  padding: '0 1px',
+                  padding: '5px',
                   fontSize: '0.7rem',
                   fontWeight: 'bold',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '8px',
+                  borderRadius: '200px',
                   cursor: 'pointer',
                   display: 'flex',
                   justifyContent: 'center',
