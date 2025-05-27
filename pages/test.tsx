@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 // MBTI Club 테스트를 위한 8가지 지표 초기 점수 (모두 0점에서 시작)
 const initialScores = {
   E: 0, I: 0,
-  S: 0, N: 0,
+  N: 0, S: 0,
   T: 0, F: 0,
   J: 0, P: 0,
   C: 0, H: 0,
@@ -19,7 +19,7 @@ const initialScores = {
 const questions = [
   {
     id: 1,
-    text: "새로운 사람들과 만나는 자리에서 먼저 대화를 시작하는 편인가요?",
+    text: "새로운 사람들과 만나는 자리에서 먼저 대화를 시작하는 편이다.",
     dimension: "EI",
     points: {
       'Yes++': { E: 3, I: -3 }, // E에 +3점, I에 -3점 (서로 상쇄)
@@ -33,7 +33,7 @@ const questions = [
   },
   {
     id: 2,
-    text: "일이 계획대로 진행되지 않을 때 스트레스를 많이 받으시나요?",
+    text: "일이 계획대로 진행되지 않을 때 스트레스를 많이 받는다.",
     dimension: "JP",
     points: {
       'Yes++': { J: 3, P: -3 },
@@ -47,7 +47,7 @@ const questions = [
   },
   {
     id: 3,
-    text: "논쟁이 생겼을 때, 감정적인 호소보다 객관적인 사실을 중요하게 생각하나요?",
+    text: "논쟁이 생겼을 때, 감정적인 호소보다 객관적인 사실을 중요하게 생각한다.",
     dimension: "TF",
     points: {
       'Yes++': { T: 3, F: -3 },
@@ -61,8 +61,8 @@ const questions = [
   },
   {
     id: 4,
-    text: "새로운 아이디어를 떠올릴 때, 구체적인 현실성보다 상상력을 발휘하는 것을 좋아하나요?",
-    dimension: "SN",
+    text: "새로운 아이디어를 떠올릴 때, 구체적인 현실성보다 상상력을 발휘하는 것을 좋아하다.",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -75,7 +75,7 @@ const questions = [
   },
   {
     id: 5,
-    text: "의견 차이가 있을 때도 항상 부드럽고 차분한 어조를 유지하려고 노력하시나요?",
+    text: "의견 차이가 있을 때도 항상 부드럽고 차분한 어조를 유지하려고 노력한다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -89,7 +89,7 @@ const questions = [
   },
   {
     id: 6,
-    text: "다른 사람의 고민을 들을 때, 공감하며 경청하는 것이 중요하다고 생각하나요?",
+    text: "다른 사람의 고민을 들을 때, 공감하며 경청하는 것이 중요하다고 생각한다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -103,7 +103,7 @@ const questions = [
   },
   {
     id: 7,
-    text: "갑작스러운 비판이나 공격적인 말에도 크게 동요하지 않고 능청스럽게 넘기는 편인가요?",
+    text: "갑작스러운 비판이나 공격적인 말에도 크게 동요하지 않고 능청스럽게 넘기는 편이다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -117,7 +117,7 @@ const questions = [
   },
   {
     id: 8,
-    text: "자신감이 넘치고 어떤 상황에서도 당당하게 자신의 의견을 피력하는 편인가요?",
+    text: "자신감이 넘치고 어떤 상황에서도 당당하게 자신의 의견을 피력하는 편이다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -175,7 +175,7 @@ const questions = [
   {
     id: 12,
     text: "손재주보다는 독특한 발상에 뛰어나다는 소리를 많이 듣는다.",
-    dimension: "SN",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -230,7 +230,7 @@ const questions = [
   },
   {
     id: 16,
-    text: "대화할 때 상대방의 눈을 잘 쳐다보지 못하고 시선을 피하는 편이다.",
+    text: "대화할 때 상대방의 눈을 잘 쳐다볼 수 있다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -272,7 +272,7 @@ const questions = [
   },
   {
     id: 19,
-    text: "논리적으로 상대를 잘 설득할 수 있다.",
+    text: "감정적 위로보다 논리적 설득에 능하다.",
     dimension: "TF",
     points: {
       'Yes++': { T: 3, F: -3 },
@@ -287,7 +287,7 @@ const questions = [
   {
     id: 20,
     text: "꿈에 대한 해석에 푹 빠져 지낼 때가 많다.",
-    dimension: "SN",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -398,8 +398,8 @@ const questions = [
   },
   {
     id: 28,
-    text: "객관적인 정보로 확인하기 전에는 잘 믿지 않는다",
-    dimension: "SN",
+    text: "객관적인 정보보다 주관적인 느낌을 잘 믿는다",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -412,7 +412,7 @@ const questions = [
   },
   {
     id: 29,
-    text: "설교조로 말하며 자기 주장이 강하다는 소리를 듣지 않는다.",
+    text: "설교조나 자기 주장을 강하게 하지 않는다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -510,8 +510,8 @@ const questions = [
   },
   {
     id: 36,
-    text: "미래의 막연한 추측보다 과거의 확실한 데이타를 중시한다.",
-    dimension: "SN",
+    text: "과거의 데이타보다 미래에 대한 나의 예측을 신뢰한다.",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -524,7 +524,7 @@ const questions = [
   },
   {
     id: 37,
-    text: "대화하다 상대를 공격하는 말이 툭 튀어나올 때가 없다.",
+    text: "대화하다 상대를 공격하는 말이 툭 튀어나오지 않는다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -623,7 +623,7 @@ const questions = [
   {
     id: 44,
     text: "나는 독특하고 엉뚱하다는 말을 종종 듣는다.",
-    dimension: "SN",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -735,7 +735,7 @@ const questions = [
   {
     id: 52,
     text: "자연과 우주에 대한 다큐멘터리를 보면 흥미가 생긴다.",
-    dimension: "SN",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -847,7 +847,7 @@ const questions = [
   {
     id: 60,
     text: "세부사항보다는 전체적인 흐름을 중시하는 편이다.",
-    dimension: "SN",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -959,7 +959,7 @@ const questions = [
   {
     id: 68,
     text: "나에게는 직감적으로 떠오르는 상상과 아이디어가 많다.",
-    dimension: "SN",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
@@ -1071,7 +1071,7 @@ const questions = [
   {
     id: 76,
     text: "어떤 일의 의미와 상징을 잘 파악한다.",
-    dimension: "SN",
+    dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
       'Yes+': { N: 2, S: -2 },
