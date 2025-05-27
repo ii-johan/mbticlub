@@ -1259,7 +1259,7 @@ const TestPage: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '1.3rem',
+            fontSize: '1.1rem',
             fontWeight: '600',
             lineHeight: '1.5',
             boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
@@ -1290,11 +1290,11 @@ const TestPage: React.FC = () => {
           {['Yes++', 'Yes+', 'Yes', 'Mid', 'No', 'No+', 'No++'].map((label) => {
             let buttonBackground = '';
             if (label.startsWith('Yes')) {
-              buttonBackground = 'linear-gradient(150deg, #4CAF50,rgb(6, 122, 56))'; // 초록색 그라데이션
+              buttonBackground = 'linear-gradient(150deg,rgb(82, 121, 84),rgb(82, 112, 95))'; // 초록색 그라데이션
             } else if (label.startsWith('No')) {
-              buttonBackground = 'linear-gradient(150deg, #FF9800,rgb(182, 67, 5))'; // 오렌지색 그라데이션
+              buttonBackground = 'linear-gradient(150deg,rgb(136, 136, 82),rgb(126, 121, 92))'; // 오렌지색 그라데이션
             } else {
-              buttonBackground = 'linear-gradient(150deg,rgb(126, 119, 119), #333333)'; // 진회색 그라데이션 (Mid)
+              buttonBackground = 'linear-gradient(150deg,rgb(83, 81, 81),rgb(81, 76, 76))'; // 진회색 그라데이션 (Mid)
             }
 
             return (
@@ -1305,13 +1305,13 @@ const TestPage: React.FC = () => {
                   flexShrink: 0,
                   flexGrow: 0,
                   minWidth: '350px',
-                  height: '47px',
+                  height: '43px',
                   padding: '5px',
-                  fontSize: '1.3rem',
+                  fontSize: '1.2rem',
                   fontWeight: 'bold',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '10px',
+                  borderRadius: '20px',
                   cursor: 'pointer',
                   display: 'flex',
                   justifyContent: 'center',
