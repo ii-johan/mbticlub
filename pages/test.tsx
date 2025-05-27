@@ -1347,12 +1347,12 @@ const TestPage: React.FC = () => {
                 style={{
                   flexShrink: 0,
                   flexGrow: 1,
-                  minWidth: '49px',
-                  height: '49px',
+                  minWidth: '10px',
+                  height: '60px',
                   width: 'calc((100% - 6px) / 7)', // ✨ 7개의 버튼이 고르게 분포되도록 계산된 너비 (옵션 1)
                                              //    또는 minWidth와 flexGrow만으로 조절 (옵션 2)
-                  padding: '0 3px',
-                  fontSize: '0.9rem',
+                  padding: '0.1px',
+                  fontSize: '0.6rem',
                   fontWeight: 'bold',
                   color: '#FFFFFF',
                   border: 'none',

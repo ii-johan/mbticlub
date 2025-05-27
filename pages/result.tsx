@@ -180,15 +180,15 @@ const ResultPage: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        <h1 style={{ fontSize: '1.8rem', marginBottom: '20px', color: '#FFFACD', textShadow: '2px 2px 5px rgba(0,0,0,0.5)' }}>
-          My MBTI-CLUB Type?
+        <h1 style={{ fontSize: '1.4rem', marginBottom: '20px', color: '#FFFACD', textShadow: '2px 2px 5px rgba(0,0,0,0.5)' }}>
+          MBTI-CLUB Type
         </h1>
         {/* MBTI 결과 표시 (연한 노란색 박스에 초록색 글씨) */}
         <div
           style={{
             backgroundColor: '#FFECB3', // 연한 노란색
             color: '#2E8B57', // 초록색 글씨
-            fontSize: '3.5rem',
+            fontSize: '2.5rem',
             fontWeight: 'bold',
             letterSpacing: '2px',
             marginBottom: '30px',
