@@ -1139,247 +1139,127 @@ const questions = [
     }
   },
 ];
-// ... (TestPage 컴포넌트 시작)
-// pages/test.tsx
+// 각 버튼에 적용될 스타일 정의
+// 각 버튼에 적용될 스타일 정의
+const buttonSpecificStyles = [
+  { name: 'Yes++', backgroundColor: '#2E7D32', color: 'white', borderColor: '#2E7D32' },
+  { name: 'Yes+',  backgroundColor: '#4CAF50', color: 'white', borderColor: '#4CAF50' },
+  { name: 'Yes',   backgroundColor: '#8BC34A', color: 'black', borderColor: '#8BC34A' },
+  { name: 'Mid',   backgroundColor: '#B0BEC5', color: 'black', borderColor: '#B0BEC5' },
+  { name: 'No',    backgroundColor: '#FFB74D', color: 'black', borderColor: '#FFB74D' },
+  { name: 'No+',   backgroundColor: '#FF8A65', color: 'white', borderColor: '#FF8A65' },
+  { name: 'No++',  backgroundColor: '#E53935', color: 'white', borderColor: '#E53935' },
+];
 
-// ... (import와 initialScores, questions 배열 정의는 그대로 둡니다.)
-
-const TestPage: React.FC = () => {
-  const router = useRouter();
+export default function TestPage() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [scores, setScores] = useState(initialScores);
+  const currentQuestion = questions[currentQuestionIndex];
+  const answerOptionKeys = ['Yes++', 'Yes+', 'Yes', 'Mid', 'No', 'No+', 'No++'];
 
-  // 현재 테스트 타입 (URL 쿼리에서 가져옴)
-  const testType = router.query.type;
-
-  // 테스트 타입에 따라 사용할 질문 목록과 시작/종료 인덱스를 결정합니다.
-  const [displayedQuestions, setDisplayedQuestions] = useState(questions);
-  const [questionOffset, setQuestionOffset] = useState(0); // 질문 인덱스 오프셋 (Fast Test용)
-
-  useEffect(() => {
-    console.log(`Test Type: ${testType}`);
-
-    if (testType === 'fast') {
-      // 'fast' 테스트일 경우, questions 배열의 41번 질문 (인덱스 40)부터 사용
-      setDisplayedQuestions(questions.slice(40, 80)); // 41번(인덱스 40)부터 80번(인덱스 79)까지 40개
-      setQuestionOffset(40); // 41번 질문은 displayedQuestions에서 인덱스 0이 되므로 오프셋 40을 설정
-      setCurrentQuestionIndex(0); // 빠른 테스트는 항상 0번 인덱스부터 시작
-    } else {
-      // 그 외의 경우 (기본 테스트), 1번부터 80번까지 모든 질문 사용
-      setDisplayedQuestions(questions);
-      setQuestionOffset(0);
-      setCurrentQuestionIndex(0); // 항상 0번 인덱스부터 시작
-    }
-  }, [testType]); // testType이 변경될 때마다 이 효과를 다시 실행합니다.
-
-  const totalQuestions = displayedQuestions.length; // 현재 테스트의 총 질문 수
-
-  const handleAnswer = (answerLabel: keyof typeof questions[0]['points']) => {
-    const currentQuestion = displayedQuestions[currentQuestionIndex]; // displayedQuestions에서 가져옴
-    if (currentQuestion && currentQuestion.points[answerLabel]) {
-      setScores(prevScores => {
-        const newScores = { ...prevScores };
-        for (const [key, value] of Object.entries(currentQuestion.points[answerLabel])) {
-          newScores[key as keyof typeof initialScores] += value;
-        }
-        console.log("Current Scores:", newScores);
-        return newScores;
-      });
-    }
-
-    if (currentQuestionIndex < totalQuestions - 1) {
-      setCurrentQuestionIndex(prevIndex => prevIndex + 1);
-    } else {
-      console.log("Final Scores:", scores);
-      const finalResult = calculateMbti(scores);
-      router.push({ pathname: '/result', query: { ...scores, mbti: finalResult } as any });
-    }
+  const commonButtonStyle: React.CSSProperties = {
+    display: 'block',
+    width: '100%', // 버튼 너비를 컨테이너에 맞춤
+    maxWidth: '300px', // 버튼의 최대 너비 설정
+    padding: '10px 15px', // 버튼 내부 여백 축소
+    margin: '6px 0', // 버튼 간 세로 간격 축소
+    fontSize: '1em', // 버튼 폰트 크기 조정
+    fontWeight: 'bold',
+    borderRadius: '8px',
+    borderWidth: '2px',
+    borderStyle: 'solid',
+    cursor: 'pointer',
+    textAlign: 'center',
+    transition: 'transform 0.1s ease, background-color 0.2s ease',
   };
-
-  const calculateMbti = (finalScores: typeof initialScores): string => {
-    let mbti = "";
-    mbti += finalScores.E >= finalScores.I ? 'E' : 'I';
-    mbti += finalScores.S >= finalScores.N ? 'S' : 'N';
-    mbti += finalScores.T >= finalScores.F ? 'T' : 'F';
-    mbti += finalScores.J >= finalScores.P ? 'J' : 'P';
-    mbti += finalScores.C >= finalScores.H ? 'C' : 'H';
-    mbti += finalScores.L >= finalScores.D ? 'L' : 'D';
-    mbti += finalScores.U >= finalScores.O ? 'U' : 'O';
-    mbti += finalScores.B >= finalScores.M ? 'B' : 'M';
-    return mbti;
-  };
-
-  // 현재 화면에 표시될 질문은 displayedQuestions에서 가져옵니다.
-  const currentQuestion = displayedQuestions[currentQuestionIndex];
-  if (!currentQuestion) {
-    return (
-      <div style={{ color: '#FFFFFF', textAlign: 'center', marginTop: '50px' }}>
-        테스트 질문을 불러오는 중입니다.
-      </div>
-    );
-  }
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        minHeight: '100vh',
-        backgroundColor: '#000000',
-        padding: '10px',
-        boxSizing: 'border-box',
-        color: '#FFFFFF',
-      }}
-    >
+    <> {/* React Fragment 사용 */}
       <Head>
-        <title>MBTI Test</title>
-        <meta name="description" content="MBTI Club personality test" />
+        <title>MBTI Club 테스트</title>
+        <meta name="description" content="MBTI Club 테스트 페이지" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Global styles */}
+        <style jsx global>{`
+          html, body, #__next {
+            height: 100%; /* Ensure full height */
+            margin: 0;
+            padding: 0;
+          }
+          body {
+            background-color: #1c1c1e; /* 어두운 배경색 */
+            color: white; /* 기본 글자색 흰색 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 시스템 폰트 사용 */
+            line-height: 1.6;
+          }
+          /* Ensure #__next takes full height and allows main to grow */
+          #__next {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 최소 전체 화면 높이 */
+          }
+        `}</style>
       </Head>
 
-      <main
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          backgroundColor: 'rgba(255, 255, 255, 0.05)',
-          borderRadius: '20px',
-          padding: '15px',
-          paddingTop: '15px',
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
-          maxWidth: '420px',
-          width: '80%',
-          textAlign: 'center',
-          flexShrink: 0,
-        }}
-      >
-        {/* 1. 상단에 번호/총번호수 - 질문 id와 offset을 더해서 실제 번호로 표시 */}
-        <div
-          style={{
-            fontSize: '1.2rem',
-            fontWeight: 'bold',
-            color: '#BBBBBB',
-            marginBottom: '15px',
-          }}
-        >
-          {currentQuestion.id} / {totalQuestions + questionOffset}
+      <main style={{
+        width: '100%',
+        maxWidth: '600px', // 콘텐츠 최대 너비
+        margin: '0 auto',    // 가로 중앙 정렬
+        padding: '20px',     // 내부 여백
+        boxSizing: 'border-box', // padding, border를 width, height에 포함
+        display: 'flex',
+        flexDirection: 'column',
+        flexGrow: 1, // #__next flex 컨테이너 내에서 남은 공간 채우기
+      }}>
+        {/* 질문 표시 - 노란 박스 (상단으로 이동 및 여백 조정) */}
+        <div style={{
+            backgroundColor: 'cornsilk',
+            border: '1px solid #F0E68C',
+            borderRadius: '10px',
+            padding: '15px 20px', // 내부 여백 조정
+            margin: '0 0 20px 0',  // 상단 여백 제거, 하단 여백 유지
+            boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+        }}>
+          <h2 style={{ marginTop: '0', marginBottom: '10px', color: '#333', fontSize: '1.2em' }}>
+            질문 {currentQuestion.id}
+          </h2>
+          <p style={{ fontSize: '1.1em', lineHeight: '1.5', color: '#222', margin: '0' }}>
+            {currentQuestion.text}
+          </p>
         </div>
 
-        {/* 2. 연노랑 박스에 질문 표시 */}
-        <div
-          style={{
-            backgroundColor: '#FFFACD',
-            color: '#333333',
-            borderRadius: '15px',
-            padding: '20px',
-            marginBottom: '20px',
-            width: '100%',
-            minHeight: '364px',
+        {/* 답변 선택지 버튼 표시 (스타일 조정) */}
+        <div style={{
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '1.6rem',
-            fontWeight: '600',
-            lineHeight: '1.5',
-            boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
-            wordBreak: 'keep-all',
-            border: '2px solid #FFD700',
-          }}
-        >
-          {currentQuestion.text}
-        </div>
-
-        {/* 3. 박스 아래에 답변 버튼 7개 */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'nowrap',
-            justifyContent: 'space-between',
-            gap: '1px',
-            width: '100%',
-            alignItems: 'center',
-            overflowX: 'auto',
-            paddingBottom: '5px',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            '&::-webkit-scrollbar': {
-              display: 'none',
-            },
-          }}
-        >
-          {['Yes++', 'Yes+', 'Yes', 'Mid', 'No', 'No+', 'No++'].map((label) => {
-            let buttonBackground = '';
-           // 교체할 switch 블록 시작
-            switch (label) {
-              case 'Yes++':
-                buttonBackground = 'linear-gradient(150deg,rgb(42, 119, 44),rgb(32, 105, 63))'; // 진한 초록
-                break;
-              case 'Yes+':
-                buttonBackground = 'linear-gradient(150deg,rgb(69, 147, 73), #4CAF50)'; // 중간 초록
-                break;
-              case 'Yes':
-                buttonBackground = 'linear-gradient(150deg, #81C784,rgb(124, 219, 128))'; // 연한 초록
-                break;
-              case 'Mid':
-                buttonBackground = 'linear-gradient(150deg, #555555,rgb(122, 115, 115))'; // 진회색 (중립)
-                break;
-              case 'No':
-                buttonBackground = 'linear-gradient(150deg, #FFB74D,rgb(239, 182, 97))'; // 연한 오렌지
-                break;
-              case 'No+':
-                buttonBackground = 'linear-gradient(150deg,rgb(206, 134, 10),rgb(211, 101, 4))'; // 중간 오렌지
-                break;
-              case 'No++':
-                buttonBackground = 'linear-gradient(150deg,rgb(165, 94, 7),rgb(125, 59, 6))'; // 진한 오렌지
-                break;
-              default:
-                buttonBackground = '#CCCCCC'; // 기본값 (혹시 모를 경우)
-            }
-            // 교체할 switch 블록 끝
-            // ... (나머지 button return 부분은 그대로 둡니다.)
-
+            width: '100%', // 버튼 컨테이너 너비
+        }}>
+          {answerOptionKeys.map((optionKey, index) => {
+            const styleInfo = buttonSpecificStyles[index];
             return (
               <button
-                key={label}
-                onClick={() => handleAnswer(label as keyof typeof questions[0]['points'])}
+                key={optionKey}
                 style={{
-                  flexShrink: 0,
-                  flexGrow: 1,
-                  minWidth: '10px',
-                  height: '60px',
-                  width: 'calc((100% - 6px) / 7)', // ✨ 7개의 버튼이 고르게 분포되도록 계산된 너비 (옵션 1)
-                                             //    또는 minWidth와 flexGrow만으로 조절 (옵션 2)
-                  padding: '0.1px',
-                  fontSize: '0.6rem',
-                  fontWeight: 'bold',
-                  color: '#FFFFFF',
-                  border: 'none',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  transition: 'background-color 0.3s ease, transform 0.2s ease',
-                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.3)',
-                  textAlign: 'center',
-                  lineHeight: '1.1',
-                  background: buttonBackground, // 조건부 배경색 적용
+                  ...commonButtonStyle,
+                  backgroundColor: styleInfo.backgroundColor,
+                  color: styleInfo.color,
+                  borderColor: styleInfo.borderColor,
                 }}
-                onMouseOver={(e) => (e.currentTarget.style.opacity = '0.9')}
-                onMouseOut={(e) => (e.currentTarget.style.opacity = '1')}
-                onMouseDown={(e) => (e.currentTarget.style.transform = 'scale(0.95)')}
-                onMouseUp={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                onMouseEnter={(e) => { // 마우스 오버 시 밝기 약간 증가 (선택적)
+                  // e.currentTarget.style.backgroundColor = lightenColor(styleInfo.backgroundColor, 10); // 함수 필요
+                }}
+                onMouseLeave={(e) => {
+                  // e.currentTarget.style.backgroundColor = styleInfo.backgroundColor;
+                }}
+                onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.97)'}
+                onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
               >
-                {label}
+                {styleInfo.name}
               </button>
             );
           })}
         </div>
       </main>
-    </div>
+    </>
   );
-};
-
-export default TestPage;
+}
