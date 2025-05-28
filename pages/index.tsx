@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         {/* 제목 */}
         <h1
           style={{
-            fontSize: '3.3em',
+            fontSize: '3rem',
             fontWeight: 'bold',
             color: '#FFFFFF',
             marginBottom: '5px',
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
         <div
           style={{
             width: '100%',
-            maxWidth: '450px',
+            maxWidth: '500px',
             height: 'auto',
             position: 'relative',
             borderRadius: '15px',
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
               fontWeight: 'bold',
               color: '#FFFFFF',
               // 새로운 그라데이션 및 그림자
-              background: 'linear-gradient(135deg,rgb(203, 205, 97) 0%,rgb(117, 101, 11) 100%)', // 시원한 파란색 그라데이션
+              background: 'linear-gradient(135deg,rgb(147, 228, 159) 0%,rgb(179, 240, 151) 100%)', // 시원한 파란색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
@@ -144,12 +144,12 @@ const Home: React.FC = () => {
               fontWeight: 'bold',
               color: '#FFFFFF',
               // 새로운 그라데이션 및 그림자
-              background: 'linear-gradient(135deg,rgb(54, 126, 72) 0%,rgb(26, 166, 84) 100%)', // 상큼한 초록색 그라데이션
+              background: 'linear-gradient(135deg,rgb(66, 124, 80) 0%,rgb(59, 120, 84) 100%)', // 상큼한 초록색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
-              boxShadow: '0 8px 20px rgba(46, 204, 113, 0.6)', // 초록색 그림자
+              boxShadow: '0 8px 20px rgba(0, 0, 0, 0.6)', // 초록색 그림자
               transform: 'scale(1)',
             }}
             onClick={() => startTest('full')}

@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 // MBTI Club 테스트를 위한 8가지 지표 초기 점수 (모두 0점에서 시작)
 const initialScores = {
   E: 0, I: 0,
-  N: 0, S: 0,
+  S: 0, N: 0,
   T: 0, F: 0,
   J: 0, P: 0,
   C: 0, H: 0,
@@ -61,16 +61,16 @@ const questions = [
   },
   {
     id: 4,
-    text: "새로운 아이디어를 떠올릴 때, 현실성보다 상상력을 더 중시한다.",
-    dimension: "NS",
+    text: "새로운 아이디어를 떠올릴때, 추상적인것보다 현실성을 중시한다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -174,16 +174,16 @@ const questions = [
   },
   {
     id: 12,
-    text: "손재주보다 독특한 발상에 더 뛰어나다.",
-    dimension: "NS",
+    text: "아이디어 제공보다 실현에 능하다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -286,16 +286,16 @@ const questions = [
   },
   {
     id: 20,
-    text: "꿈에 대한 해석에 자주 빠져 있다.",
-    dimension: "NS",
+    text: "친구가 미래에 대해 말하면 나는 점심메뉴가 궁금하다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -398,16 +398,16 @@ const questions = [
   },
   {
     id: 28,
-    text: "객관적인 정보보다 주관적인 느낌을 잘 믿는다",
-    dimension: "NS",
+    text: "주관적인 느낌보다 객관적인 정보를 신뢰한다",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -510,16 +510,16 @@ const questions = [
   },
   {
     id: 36,
-    text: "과거의 데이타보다 미래에 대한 나의 예측을 신뢰한다.",
-    dimension: "NS",
+    text: "과거의 데이타가 예감보다 더 확실하다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -622,16 +622,16 @@ const questions = [
   },
   {
     id: 44,
-    text: "나는 독특하고 엉뚱하다는 말을 자주 듣는다.",
-    dimension: "NS",
+    text: "눈에 보이지 않으면 믿기 어렵다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -734,16 +734,16 @@ const questions = [
   },
   {
     id: 52,
-    text: "자연과 우주에 대한 방송을 보면 흥미롭다.",
-    dimension: "NS",
+    text: "자연과 우주보다 세상과 맛집에 관심이 간다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -846,16 +846,16 @@ const questions = [
   },
   {
     id: 60,
-    text: "세부사항보다 전체적인 흐름을 중시한다.",
-    dimension: "NS",
+    text: "숨겨진 상징과 의미보다 드러난 사실에 주목한다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -958,16 +958,16 @@ const questions = [
   },
   {
     id: 68,
-    text: "직감적으로 떠오르는 상상과 아이디어가 많다.",
-    dimension: "NS",
+    text: "센스있는 농담에 서툴다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -1070,16 +1070,16 @@ const questions = [
   },
   {
     id: 76,
-    text: "어떤 일의 의미와 상징을 잘 파악한다.",
-    dimension: "NS",
+    text: "'만약에 말야'라고 묻는 친구가 귀찮다.",
+    dimension: "SN",
     points: {
-      'Yes++': { N: 3, S: -3 },
-      'Yes+': { N: 2, S: -2 },
-      'Yes': { N: 1, S: -1 },
-      'Mid': { N: 0, S: 0 },
-      'No': { N: -1, S: 1 },
-      'No+': { N: -2, S: 2 },
-      'No++': { N: -3, S: 3 },
+      'Yes++': { S: 3, N: -3 },
+      'Yes+': { S: 2, N: -2 },
+      'Yes': { S: 1, N: -1 },
+      'Mid': { S: 0, N: 0 },
+      'No': { S: -1, N: 1 },
+      'No+': { S: -2, N: 2 },
+      'No++': { S: -3, N: 3 },
     }
   },
   {
@@ -1178,7 +1178,7 @@ const TestPage: React.FC = () => {
   const calculateMbti = (finalScores: typeof initialScores): string => {
     let mbti = "";
     mbti += finalScores.E >= finalScores.I ? 'E' : 'I';
-    mbti += finalScores.N >= finalScores.S ? 'N' : 'S';
+    mbti += finalScores.S >= finalScores.N ? 'S' : 'N';
     mbti += finalScores.T >= finalScores.F ? 'T' : 'F';
     mbti += finalScores.J >= finalScores.P ? 'J' : 'P';
     // 추가된 4개 지표 처리 (가정: C/H, L/D, U/R, B/M)
@@ -1214,7 +1214,7 @@ const TestPage: React.FC = () => {
     >
       <Head>
         <title>MBTI Club</title>
-        <meta name="description" content="MBTI Club personality test" />
+        <meta name="description" content="MBTI-Club personality test" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
