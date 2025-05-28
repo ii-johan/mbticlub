@@ -74,7 +74,7 @@ const ResultPage: React.FC = () => {
     calculated['E'] = Math.round(((eiDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
     calculated['I'] = 100 - calculated['E'];
 
-    // S vs N
+    // N vs S
     const sScore = currentScores['N'] || 0;
     const nScore = currentScores['S'] || 0;
     const snDiff = sScore - nScore;
@@ -137,7 +137,7 @@ const ResultPage: React.FC = () => {
   // 지표별 결과 표시 순서 (UI에 표시될 순서) 및 한글 라벨
   const dimensionPairs = [
     { primary: 'E', secondary: 'I', primaryLabel: '외향형', secondaryLabel: '내향형' },
-    { primary: 'S', secondary: 'N', primaryLabel: '감각형', secondaryLabel: '직관형' },
+    { primary: 'N', secondary: 'S', primaryLabel: '직관형', secondaryLabel: '감각형' },
     { primary: 'T', secondary: 'F', primaryLabel: '사고형', secondaryLabel: '감정형' },
     { primary: 'J', secondary: 'P', primaryLabel: '계획형', secondaryLabel: '융통형' },
     { primary: 'C', secondary: 'H', primaryLabel: '순화적 언어', secondaryLabel: '공격적 언어' },
@@ -219,7 +219,7 @@ const ResultPage: React.FC = () => {
           <p>{description}</p>
         </div>
 
-        <h2 style={{ fontSize: '1.4rem', marginBottom: '20px', color: '#FFFACD' }}>
+        <h2 style={{ fontSize: '1.3rem', marginBottom: '20px', color: '#FFFACD' }}>
           세부 분석 결과
         </h2>
         <div style={{ width: '100%', marginBottom: '30px' }}>
