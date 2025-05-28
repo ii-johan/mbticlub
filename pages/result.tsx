@@ -75,11 +75,11 @@ const ResultPage: React.FC = () => {
     calculated['I'] = 100 - calculated['E'];
 
     // S vs N
-    const sScore = currentScores['S'] || 0;
-    const nScore = currentScores['N'] || 0;
+    const sScore = currentScores['N'] || 0;
+    const nScore = currentScores['S'] || 0;
     const snDiff = sScore - nScore;
-    calculated['S'] = Math.round(((snDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
-    calculated['N'] = 100 - calculated['S'];
+    calculated['N'] = Math.round(((snDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
+    calculated['S'] = 100 - calculated['S'];
 
     // T vs F
     const tScore = currentScores['T'] || 0;
@@ -213,13 +213,13 @@ const ResultPage: React.FC = () => {
             lineHeight: '1.6',
             color: '#E0E0E0',
             fontStyle: 'italic',
-            boxShadow: '0 5px 10px rgba(0,0,0,0.2)',
+            boxShadow: '0 5px 10px rgba(26, 75, 66, 0.2)',
           }}
         >
           <p>{description}</p>
         </div>
 
-        <h2 style={{ fontSize: '1.8rem', marginBottom: '20px', color: '#FFFACD' }}>
+        <h2 style={{ fontSize: '1.6rem', marginBottom: '20px', color: '#FFFACD' }}>
           세부 분석 결과
         </h2>
         <div style={{ width: '100%', marginBottom: '30px' }}>

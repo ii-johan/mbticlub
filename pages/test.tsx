@@ -1259,7 +1259,7 @@ const TestPage: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '1.4rem',
+            fontSize: '1.2rem',
             fontWeight: 'bold',
             lineHeight: '1.5',
             boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
