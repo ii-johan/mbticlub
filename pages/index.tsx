@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         {/* 제목 */}
         <h1
           style={{
-            fontSize: '3.5em',
+            fontSize: '3.3em',
             fontWeight: 'bold',
             color: '#FFFFFF',
             marginBottom: '5px',
@@ -108,12 +108,12 @@ const Home: React.FC = () => {
               fontWeight: 'bold',
               color: '#FFFFFF',
               // 새로운 그라데이션 및 그림자
-              background: 'linear-gradient(135deg, #6DD5FA 0%,rgb(26, 119, 181) 100%)', // 시원한 파란색 그라데이션
+              background: 'linear-gradient(135deg,rgb(203, 205, 97) 0%,rgb(117, 101, 11) 100%)', // 시원한 파란색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
               transition: 'all 0.3s ease', // 모든 속성에 전환 효과 적용
-              boxShadow: '0 8px 20px rgba(41, 128, 185, 0.6)', // 파란색 그림자
+              boxShadow: '0 8px 20px rgba(41, 185, 48, 0.6)', // 파란색 그림자
               transform: 'scale(1)', // 기본 크기
             }}
             onClick={() => startTest('fast')}
@@ -144,7 +144,7 @@ const Home: React.FC = () => {
               fontWeight: 'bold',
               color: '#FFFFFF',
               // 새로운 그라데이션 및 그림자
-              background: 'linear-gradient(135deg, #81F49E 0%,rgb(26, 166, 84) 100%)', // 상큼한 초록색 그라데이션
+              background: 'linear-gradient(135deg,rgb(54, 126, 72) 0%,rgb(26, 166, 84) 100%)', // 상큼한 초록색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
