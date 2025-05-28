@@ -180,7 +180,7 @@ const ResultPage: React.FC = () => {
           textAlign: 'center',
         }}
       >
-        <h1 style={{ fontSize: '1.4rem', marginBottom: '20px', color: '#FFFACD', textShadow: '2px 2px 5px rgba(0,0,0,0.5)' }}>
+        <h1 style={{ fontSize: '1.3rem', marginBottom: '20px', color: '#FFFACD', textShadow: '2px 2px 5px rgba(0,0,0,0.5)' }}>
           MBTI-CLUB Type
         </h1>
         {/* MBTI 결과 표시 (연한 노란색 박스에 초록색 글씨) */}
@@ -188,7 +188,7 @@ const ResultPage: React.FC = () => {
           style={{
             backgroundColor: '#FFECB3', // 연한 노란색
             color: '#2E8B57', // 초록색 글씨
-            fontSize: '2.5rem',
+            fontSize: '2.2rem',
             fontWeight: 'bold',
             letterSpacing: '2px',
             marginBottom: '30px',
@@ -209,7 +209,7 @@ const ResultPage: React.FC = () => {
             padding: '20px',
             marginBottom: '30px',
             width: '100%',
-            fontSize: '1.1rem',
+            fontSize: '1rem',
             lineHeight: '1.6',
             color: '#E0E0E0',
             fontStyle: 'italic',
@@ -219,7 +219,7 @@ const ResultPage: React.FC = () => {
           <p>{description}</p>
         </div>
 
-        <h2 style={{ fontSize: '1.6rem', marginBottom: '20px', color: '#FFFACD' }}>
+        <h2 style={{ fontSize: '1.4rem', marginBottom: '20px', color: '#FFFACD' }}>
           세부 분석 결과
         </h2>
         <div style={{ width: '100%', marginBottom: '30px' }}>
