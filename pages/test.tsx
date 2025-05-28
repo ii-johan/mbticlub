@@ -1276,7 +1276,7 @@ const TestPage: React.FC = () => {
             display: 'flex',
             flexDirection: 'column',
             gap: '1.5px',
-            width: '100%', // 답변 버튼 박스 width 변경
+            width: '70%', // 답변 버튼 박스 width 변경
             alignItems: 'center',
             overflowX: 'auto',
             paddingBottom: '5px',

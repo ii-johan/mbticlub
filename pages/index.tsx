@@ -52,9 +52,9 @@ const Home: React.FC = () => {
         {/* 제목 */}
         <h1
           style={{
-            fontSize: '3rem',
+            fontSize: '2.5rem',
             fontWeight: 'bold',
-            color: '#FFFFFF',
+            color: '#KKKFFF',
             marginBottom: '5px',
             textShadow: '2px 2px 5px rgba(0,0,0,0.6)',
             letterSpacing: '-1px',
@@ -113,17 +113,17 @@ const Home: React.FC = () => {
               borderRadius: '12px',
               cursor: 'pointer',
               transition: 'all 0.3s ease', // 모든 속성에 전환 효과 적용
-              boxShadow: '0 8px 20px rgba(41, 185, 48, 0.6)', // 파란색 그림자
+              boxShadow: '0 8px 20px rgba(0, 0, 0, 0.6)', // 파란색 그림자
               transform: 'scale(1)', // 기본 크기
             }}
             onClick={() => startTest('fast')}
             onMouseOver={(e) => {
               e.currentTarget.style.transform = 'scale(1.03)'; // 호버 시 약간 확대
-              e.currentTarget.style.boxShadow = '0 12px 25px rgba(41, 128, 185, 0.8)';
+              e.currentTarget.style.boxShadow = '0 12px 5px rgba(0, 0, 0, 0.8)';
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.transform = 'scale(1)'; // 원복
-              e.currentTarget.style.boxShadow = '0 8px 20px rgba(41, 128, 185, 0.6)';
+              e.currentTarget.style.boxShadow = '0 8px 5px rgba(0, 0, 0, 0.6)';
             }}
             onMouseDown={(e) => {
               e.currentTarget.style.transform = 'scale(0.98)'; // 클릭 시 약간 축소
@@ -144,22 +144,22 @@ const Home: React.FC = () => {
               fontWeight: 'bold',
               color: '#FFFFFF',
               // 새로운 그라데이션 및 그림자
-              background: 'linear-gradient(135deg,rgb(66, 124, 80) 0%,rgb(59, 120, 84) 100%)', // 상큼한 초록색 그라데이션
+              background: 'linear-gradient(135deg,rgb(75, 80, 79) 0%,rgb(76, 82, 80) 100%)', // 상큼한 초록색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
-              boxShadow: '0 8px 20px rgba(0, 0, 0, 0.6)', // 초록색 그림자
+              boxShadow: '0 8px 5px rgba(0, 0, 0, 0.6)', // 초록색 그림자
               transform: 'scale(1)',
             }}
             onClick={() => startTest('full')}
             onMouseOver={(e) => {
               e.currentTarget.style.transform = 'scale(1.03)';
-              e.currentTarget.style.boxShadow = '0 12px 25px rgba(46, 204, 113, 0.8)';
+              e.currentTarget.style.boxShadow = '0 12px 5px rgba(0, 0, 0, 0.8)';
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = '0 8px 20px rgba(46, 204, 113, 0.6)';
+              e.currentTarget.style.boxShadow = '0 8px 5px rgba(0, 0, 0, 0.6)';
             }}
             onMouseDown={(e) => {
               e.currentTarget.style.transform = 'scale(0.98)';
