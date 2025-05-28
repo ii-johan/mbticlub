@@ -61,7 +61,7 @@ const questions = [
   },
   {
     id: 4,
-    text: "새로운 아이디어를 떠올릴 때, 구체적인 현실성보다 상상력을 발휘하는 것을 좋아하다.",
+    text: "새로운 아이디어를 떠올릴 때, 현실성보다 상상력을 더 중시한다.",
     dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
@@ -75,7 +75,7 @@ const questions = [
   },
   {
     id: 5,
-    text: "의견 차이가 있을 때도 항상 부드럽고 차분한 어조를 유지하려고 노력한다.",
+    text: "의견차이가 있을 때 부드럽고 차분한 말투를 유지하려고 노력한다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -89,7 +89,7 @@ const questions = [
   },
   {
     id: 6,
-    text: "다른 사람의 고민을 들을 때, 공감하며 경청하는 것이 중요하다고 생각한다.",
+    text: "상대의 고민을 들을 때, 공감하며 경청하는 것에 능숙하다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -103,7 +103,7 @@ const questions = [
   },
   {
     id: 7,
-    text: "갑작스러운 비판이나 공격적인 말에도 크게 동요하지 않고 능청스럽게 넘기는 편이다.",
+    text: "나를 공격하는 말투에도 동요하지 않고 능청스럽게 넘긴다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -117,7 +117,7 @@ const questions = [
   },
   {
     id: 8,
-    text: "자신감이 넘치고 어떤 상황에서도 당당하게 자신의 의견을 피력하는 편이다.",
+    text: "어떤 상황에서도 당당하게 자신의 의견을 말한다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -160,7 +160,7 @@ const questions = [
   },
   {
     id: 11,
-    text: "사람과의 협력보다는 일의 효율성과 체계성을 중시한다.",
+    text: "사람과의 협력보다 일의 효율성을 중시한다.",
     dimension: "TF",
     points: {
       'Yes++': { T: 3, F: -3 },
@@ -174,7 +174,7 @@ const questions = [
   },
   {
     id: 12,
-    text: "손재주보다는 독특한 발상에 뛰어나다는 소리를 많이 듣는다.",
+    text: "손재주보다 독특한 발상에 더 뛰어나다.",
     dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
@@ -216,7 +216,7 @@ const questions = [
   },
   {
     id: 15,
-    text: "상대방이 화를 내도 능청스럽게 상대의 화를 누그러뜨리는데 능숙하다",
+    text: "상대가 화를 내도 능청스럽게 상대의 화를 누그러뜨린다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -230,7 +230,7 @@ const questions = [
   },
   {
     id: 16,
-    text: "대화할 때 상대방의 눈을 잘 쳐다볼 수 있다.",
+    text: "대화할 때 상대방의 눈을 잘 쳐다본다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -244,7 +244,7 @@ const questions = [
   },
   {
     id: 17,
-    text: "모임이나 파티가 다가오면 마음이 들뜨고 신이 난다.",
+    text: "모임이나 파티가 있으면 신이 난다.",
     dimension: "EI",
     points: {
       'Yes++': { E: 3, I: -3 }, // E에 +3점, I에 -3점 (서로 상쇄)
@@ -286,7 +286,7 @@ const questions = [
   },
   {
     id: 20,
-    text: "꿈에 대한 해석에 푹 빠져 지낼 때가 많다.",
+    text: "꿈에 대한 해석에 자주 빠져 있다.",
     dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
@@ -300,7 +300,7 @@ const questions = [
   },
   {
     id: 21,
-    text: "대화 중 감정이 격해지면 잠시 멈추고 진정하려고 애쓰는 편이다.",
+    text: "대화중 감정이 격해지면 잠시 멈추고 진정한다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -314,7 +314,7 @@ const questions = [
   },
   {
     id: 22,
-    text: "상대가 말하면 반응해주는 리액션의 말을 많이 하는 편이다.",
+    text: "상대가 말하면 잘 반응해주려고 애쓴다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -328,7 +328,7 @@ const questions = [
   },
   {
     id: 23,
-    text: "장난스럽게 유머를 던져서 분위기를 새롭게 하는데 아주 능하다.",
+    text: "유머를 던져서 분위기를 새롭게 하는데 능하다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -342,7 +342,7 @@ const questions = [
   },
   {
     id: 24,
-    text: "내가 무언가를 주장할 때 깊게 몰입하여 주변 사람들의 움직임과 반응이 거의 보이지 않는다.",
+    text: "말할 때 깊게 몰입하여 주변 분위기가 안보인다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -356,7 +356,7 @@ const questions = [
   },
   {
     id: 25,
-    text: "집에서 조용히 개인 시간을 보내는 것보다 다양한 활동을 할 때 생기가 넘친다.",
+    text: "사람들과 어울려 다양한 활동을 많이 한다.",
     dimension: "EI",
     points: {
       'Yes++': { E: 3, I: -3 }, // E에 +3점, I에 -3점 (서로 상쇄)
@@ -412,7 +412,7 @@ const questions = [
   },
   {
     id: 29,
-    text: "설교조나 자기 주장을 강하게 하지 않는다.",
+    text: "설교조나 자기 주장의 말투를 하지 않는다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -426,7 +426,7 @@ const questions = [
   },
   {
     id: 30,
-    text: "대화 중 상대방의 말을 요약하여 나의 이해 상태를 점검한다.",
+    text: "대화 중 상대의 말을 머리속에 요약하고 점검한다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -440,7 +440,7 @@ const questions = [
   },
   {
     id: 31,
-    text: "상대가 무슨 말을 해도 나에게는 별로 타격감이 오지 않는다.",
+    text: "상대가 무슨 말을 해도 별로 타격감이 없다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -454,7 +454,7 @@ const questions = [
   },
   {
     id: 32,
-    text: "대화할 때 상대의 기분을 상하게 할까봐 단어 선택에 조심하는 편이다.",
+    text: "대화중 상대의 마음이 상하지 않도록 단어 선택에 신경쓴다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -524,7 +524,7 @@ const questions = [
   },
   {
     id: 37,
-    text: "대화하다 상대를 공격하는 말이 툭 튀어나오지 않는다.",
+    text: "대화중 상대를 공격하는 일이 별로 없다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -538,7 +538,7 @@ const questions = [
   },
   {
     id: 38,
-    text: "대화 중 상대방의 눈빛이나 동작같은 비언어적 신호에 신경쓴다.",
+    text: "상대의 눈빛이나 동작같은 비언어적 신호에 민감하다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -566,7 +566,7 @@ const questions = [
   },
   {
     id: 40,
-    text: "대인관계시 표정이 말투가 연극적이라는 말을 듣지 않는다.",
+    text: "내 표정과 말투는 전혀 연극적이지 않다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -580,7 +580,7 @@ const questions = [
   },
   {
     id: 41, // Fast Test의 시작점
-    text: "팀 프로젝트에서 주도적인 역할을 맡는 것에 익숙하다.",
+    text: "모임에서 주도적인 역할을 맡는 것에 익숙하다.",
     dimension: "EI",
     points: {
       'Yes++': { E: 3, I: -3 }, // E에 +3점, I에 -3점 (서로 상쇄)
@@ -608,7 +608,7 @@ const questions = [
   },
   {
     id: 43,
-    text: "사람들과 대화할 때 다정하기보다 무뚝뚝하다는 말을 듣는다.",
+    text: "나는 다정하기보다 무뚝뚝하다는 말을 듣는다.",
     dimension: "TF",
     points: {
       'Yes++': { T: 3, F: -3 },
@@ -622,7 +622,7 @@ const questions = [
   },
   {
     id: 44,
-    text: "나는 독특하고 엉뚱하다는 말을 종종 듣는다.",
+    text: "나는 독특하고 엉뚱하다는 말을 자주 듣는다.",
     dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
@@ -636,7 +636,7 @@ const questions = [
   },
   {
     id: 45,
-    text: "대화할 때 말투가 세지 않고 부드러운 편이다.",
+    text: "나는 말투가 세지 않고 부드러운 편이다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -650,7 +650,7 @@ const questions = [
   },
   {
     id: 46,
-    text: "다른 사람의 고민을 듣고 해결책을 제시하기보다 감정을 위로해주는 편이다.",
+    text: "상대의 고민을 듣고 마음을 잘 위로해준다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -664,7 +664,7 @@ const questions = [
   },
   {
     id: 47,
-    text: "토론 중 사람들이 격앙될 때도 나는 차분함을 잃지 않는다.",
+    text: "토론중 격앙될 때도 나는 차분함을 잃지 않는다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -678,7 +678,7 @@ const questions = [
   },
   {
     id: 48,
-    text: "상대와 대화할 때 억지공감보다는 무심하게 바라보는 편이다.",
+    text: "상대의 기분을 맞추기보다 무심하게 지켜본다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -692,7 +692,7 @@ const questions = [
   },
   {
     id: 49,
-    text: "사람들 앞에서 발표할 때 긴장보다는 신바람이 난다.",
+    text: "발표가 있으면 긴장보다는 신바람이 난다.",
     dimension: "EI",
     points: {
       'Yes++': { E: 3, I: -3 }, // E에 +3점, I에 -3점 (서로 상쇄)
@@ -720,7 +720,7 @@ const questions = [
   },
   {
     id: 51,
-    text: "대화 중에 내 말에 지나치게 공감을 표현하는 사람이 불편하다.",
+    text: "누가 내 말에 지나치게 공감을 표현하면 불편하다.",
     dimension: "TF",
     points: {
       'Yes++': { T: 3, F: -3 },
@@ -734,7 +734,7 @@ const questions = [
   },
   {
     id: 52,
-    text: "자연과 우주에 대한 다큐멘터리를 보면 흥미가 생긴다.",
+    text: "자연과 우주에 대한 방송을 보면 흥미롭다.",
     dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
@@ -748,7 +748,7 @@ const questions = [
   },
   {
     id: 53,
-    text: "상대가 흥분되어 있으면 차분하라고 물 한잔 건네는 편이다.",
+    text: "상대가 흥분하면 차분하라고 물 한잔 건넨다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -762,7 +762,7 @@ const questions = [
   },
   {
     id: 54,
-    text: "상대의 주장에 동의하지 않아도 즉각 반박하지 않는다.",
+    text: "상대의 말에 동의하지 않지만 반박하지 않는다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -776,7 +776,7 @@ const questions = [
   },
   {
     id: 55,
-    text: "카톡단체방을 뛰쳐나간 친구에게 능청스럽게 전화할 수 있다.",
+    text: "카톡방을 나간 친구에게 능청스럽게 전화한다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -804,7 +804,7 @@ const questions = [
   },
   {
     id: 57,
-    text: "혼자 하는 작업보다 함께 하는 작업이 더 편하다.",
+    text: "혼자보다 함께 하는 작업이 더 편하다.",
     dimension: "EI",
     points: {
       'Yes++': { E: 3, I: -3 }, // E에 +3점, I에 -3점 (서로 상쇄)
@@ -818,7 +818,7 @@ const questions = [
   },
   {
     id: 58,
-    text: "옷장 안에 옷 하나가 튀어나와 있으면 엄청 신경이 거슬린다.",
+    text: "액자가 삐뚤어져 있으면 엄청 신경쓰인다.",
     dimension: "JP",
     points: {
       'Yes++': { J: 3, P: -3 },
@@ -832,7 +832,7 @@ const questions = [
   },
   {
     id: 59,
-    text: "사람들을 위로해주는 말이 영 어색하고 불편하다.",
+    text: "사람들을 위로하는게 어렵다.",
     dimension: "TF",
     points: {
       'Yes++': { T: 3, F: -3 },
@@ -846,7 +846,7 @@ const questions = [
   },
   {
     id: 60,
-    text: "세부사항보다는 전체적인 흐름을 중시하는 편이다.",
+    text: "세부사항보다 전체적인 흐름을 중시한다.",
     dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
@@ -874,7 +874,7 @@ const questions = [
   },
   {
     id: 62,
-    text: "상대의 어려움을 들으면 부담이 되더라도 피하지 않고 돕고싶다.",
+    text: "고민을 들으면 부담이 되어도 돕고싶다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -888,7 +888,7 @@ const questions = [
   },
   {
     id:63,
-    text: "먼저 화해를 청하는게 싫지만 그래도 내가 먼저 하는 편이다.",
+    text: "먼저 화해를 청하는 편이다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -902,7 +902,7 @@ const questions = [
   },
   {
     id: 64,
-    text: "사람들이 나를 싫어할까 걱정되어 내 의견을 숨기진 않는다.",
+    text: "주변분위기에 압도당하지 않고 내 의견을 말한다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -916,7 +916,7 @@ const questions = [
   },
   {
     id: 65,
-    text: "생각을 정리하고 말하기보다 그냥 말하는 편이다.",
+    text: "생각을 정리하고 말하지않고 그냥 말한다.",
     dimension: "EI",
     points: {
       'Yes++': { E: 3, I: -3 }, // E에 +3점, I에 -3점 (서로 상쇄)
@@ -930,7 +930,7 @@ const questions = [
   },
   {
     id: 66,
-    text: "일을 펼쳐놓기보다 한가지 일에 집중해서 끝내는 편이다.",
+    text: "일을 펼쳐놓기보다 한가지 일에 집중한다.",
     dimension: "JP",
     points: {
       'Yes++': { J: 3, P: -3 },
@@ -944,7 +944,7 @@ const questions = [
   },
   {
     id: 67,
-    text: "아부하는 말투를 들으면 엄청 느끼하다.",
+    text: "칭찬조의 말투를 들으면 엄청 느끼하다.",
     dimension: "TF",
     points: {
       'Yes++': { T: 3, F: -3 },
@@ -958,7 +958,7 @@ const questions = [
   },
   {
     id: 68,
-    text: "나에게는 직감적으로 떠오르는 상상과 아이디어가 많다.",
+    text: "직감적으로 떠오르는 상상과 아이디어가 많다.",
     dimension: "NS",
     points: {
       'Yes++': { N: 3, S: -3 },
@@ -972,7 +972,7 @@ const questions = [
   },
   {
     id: 69,
-    text: "내가 열심히 설명하고 사람들은 모두 경청하는 분위기가 자연스럽다.",
+    text: "내가 말하면 사람들은 경청하는 분위기다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -986,7 +986,7 @@ const questions = [
   },
   {
     id: 70,
-    text: "나는 티키타카 대화를 잘하는 편이다.",
+    text: "티키타카 대화를 잘한다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -1000,7 +1000,7 @@ const questions = [
   },
   {
     id: 71,
-    text: "내 실수에 대해 넉살스럽게 인정하는 것이 어렵지 않다.",
+    text: "실수에 대해 넉살스럽게 인정한다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -1014,7 +1014,7 @@ const questions = [
   },
   {
     id: 72,
-    text: "외국에 나가서 말이 통하지 않아도 주눅들지 않고 당당하게 소통할 수 있다.",
+    text: "외국에서 말이 안통해도 전혀 주눅들지 않는다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -1028,7 +1028,7 @@ const questions = [
   },
   {
     id: 73,
-    text: "노래 순서가 다가오면 점점 초조해지기보다 기대가 넘친다.",
+    text: "노래순서가 다가오면 긴장보다 기대가 넘친다.",
     dimension: "EI",
     points: {
       'Yes++': { E: 3, I: -3 }, // E에 +3점, I에 -3점 (서로 상쇄)
@@ -1056,7 +1056,7 @@ const questions = [
   },
   {
     id: 75,
-    text: "말투를 꾸미고 다정하게 행동하는 사람이 연극적으로 보인다.",
+    text: "말투가 부드럽고 다정한 사람이 연극적으로 보인다.",
     dimension: "TF",
     points: {
       'Yes++': { T: 3, F: -3 },
@@ -1084,7 +1084,7 @@ const questions = [
   },
   {
     id: 77,
-    text: "한심한 인생을 살고있는 사람이 한심해 보이지 않는다.",
+    text: "한심한 인생을 살고있는 사람이 한심하지 않다.",
     dimension: "CH",
     points: {
       'Yes++': { C: 3, H: -3 },
@@ -1098,7 +1098,7 @@ const questions = [
   },
   {
     id: 78,
-    text: "상대가 한 말을 되받아 적절한 말로 반사해 주는데 능숙하다.",
+    text: "상대의 말에 맞춰 적절히 말해주는데 능숙하다.",
     dimension: "LD",
     points: {
       'Yes++': { L: 3, D: -3 },
@@ -1112,7 +1112,7 @@ const questions = [
   },
   {
     id: 79,
-    text: "사람들이 나를 과소평가해도 그다지 신경쓰지 않는다.",
+    text: "나를 과소평가해도 그다지 신경쓰지 않는다.",
     dimension: "UO",
     points: {
       'Yes++': { U: 3, O: -3 },
@@ -1126,7 +1126,7 @@ const questions = [
   },
   {
     id: 80, // Fast Test의 끝점
-    text: "문제가 생기면 우울해지기보다 부딪쳐 해결하려는 편이다.",
+    text: "문제가 있으면 걱정보다 도전의식이 생긴다.",
     dimension: "BM",
     points: {
       'Yes++': { B: 3, M: -3 },
@@ -1178,7 +1178,7 @@ const TestPage: React.FC = () => {
   const calculateMbti = (finalScores: typeof initialScores): string => {
     let mbti = "";
     mbti += finalScores.E >= finalScores.I ? 'E' : 'I';
-    mbti += finalScores.S >= finalScores.N ? 'S' : 'N';
+    mbti += finalScores.N >= finalScores.S ? 'N' : 'S';
     mbti += finalScores.T >= finalScores.F ? 'T' : 'F';
     mbti += finalScores.J >= finalScores.P ? 'J' : 'P';
     // 추가된 4개 지표 처리 (가정: C/H, L/D, U/R, B/M)
@@ -1253,14 +1253,14 @@ const TestPage: React.FC = () => {
             color: '#333333',
             borderRadius: '20px',
             padding: '30px',
-            marginBottom: '5px',
-            width: '80%', // 내부 질문 텍스트 박스는 100% 유지
-            minHeight: '110px',
+            marginBottom: '15px',
+            width: '83%', // 내부 질문 텍스트 박스는 100% 유지
+            minHeight: '120px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '1.1rem',
-            fontWeight: '600',
+            fontSize: '1.4rem',
+            fontWeight: 'bold',
             lineHeight: '1.5',
             boxShadow: '0 5px 15px rgba(0, 0, 0, 0.2)',
             wordBreak: 'keep-all',
@@ -1290,11 +1290,11 @@ const TestPage: React.FC = () => {
           {['Yes++', 'Yes+', 'Yes', 'Mid', 'No', 'No+', 'No++'].map((label) => {
             let buttonBackground = '';
             if (label.startsWith('Yes')) {
-              buttonBackground = 'linear-gradient(150deg,rgb(82, 121, 84),rgb(82, 112, 95))'; // 초록색 그라데이션
+              buttonBackground = 'linear-gradient(150deg,rgb(139, 222, 143),rgb(39, 126, 76))'; // 초록색 그라데이션
             } else if (label.startsWith('No')) {
-              buttonBackground = 'linear-gradient(150deg,rgb(136, 136, 82),rgb(126, 121, 92))'; // 오렌지색 그라데이션
+              buttonBackground = 'linear-gradient(150deg,rgb(222, 222, 127),rgb(137, 125, 59))'; // 오렌지색 그라데이션
             } else {
-              buttonBackground = 'linear-gradient(150deg,rgb(83, 81, 81),rgb(81, 76, 76))'; // 진회색 그라데이션 (Mid)
+              buttonBackground = 'linear-gradient(150deg,rgb(134, 122, 122),rgb(81, 76, 76))'; // 진회색 그라데이션 (Mid)
             }
 
             return (
@@ -1304,14 +1304,14 @@ const TestPage: React.FC = () => {
                 style={{
                   flexShrink: 0,
                   flexGrow: 0,
-                  minWidth: '350px',
-                  height: '43px',
+                  minWidth: '360px',
+                  height: '50px',
                   padding: '5px',
-                  fontSize: '1.2rem',
+                  fontSize: '1.1rem',
                   fontWeight: 'bold',
                   color: '#FFFFFF',
                   border: 'none',
-                  borderRadius: '20px',
+                  borderRadius: '10px',
                   cursor: 'pointer',
                   display: 'flex',
                   justifyContent: 'center',
