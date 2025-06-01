@@ -27,8 +27,8 @@ const Home: React.FC = () => {
       }}
     >
       <Head>
-        <title>MBTI Club</title>
-        <meta name="description" content="MBTI Club personality test" />
+        <title>MBTI COLK</title>
+        <meta name="description" content="MBTI Colk personality test" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
             letterSpacing: '-1px',
           }}
         >
-          MBTI Club
+          MBTI COLK
         </h1>
 
         {/* 이미지 컨테이너 */}

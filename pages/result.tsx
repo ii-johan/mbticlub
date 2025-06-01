@@ -12,10 +12,10 @@ const mbtiDescriptions: { [key: string]: string } = {
   'ESTJ': '당신은 현실적이고 논리적인 실용주의자입니다. 체계적인 계획과 단호한 실행력으로 목표를 달성하며, 타고난 리더십으로 조직을 이끌어갑니다.',
   'ENFJ': '당신은 사람에 대한 깊은 이해와 뛰어난 공감 능력을 지닌 따뜻한 영웅입니다. 타인의 성장을 돕고 긍정적인 영향을 주며, 함께하는 가치를 중요하게 생각합니다.',
   // 나머지 8지표 조합에 대한 설명을 여기에 추가해주세요.
-  // 예: CH, LD, UR, BM 지표의 조합에 대한 설명도 필요합니다.
+  // 예: CD, OU, LM, KB 지표의 조합에 대한 설명도 필요합니다.
   // 모든 2^8 = 256가지 조합을 다 넣기는 어렵지만, 대표적인 조합이나 주요 지표별 설명을 조합할 수 있습니다.
   // 여기서는 예시로 몇 가지만 남겨두었습니다. 실제 테스트 결과를 반영하려면 더 많은 조합을 추가해야 합니다.
-  'default': 'MBTI는 선천적성향으로 자신을 잘 알수있는 지표이며, CLUB는 후천적습성으로 자신을 바꿀수있는 지표이다.'
+  'default': 'MBTI는 선천적성향으로 자신을 잘 알수있는 지표이며, COLK는 후천적습성으로 자신을 바꿀수있는 지표이다.'
 };
 
 const ResultPage: React.FC = () => {
@@ -30,8 +30,8 @@ const ResultPage: React.FC = () => {
       const { mbti, ...rawScores } = router.query;
 
       if (typeof mbti === 'string') {
-        // MBTI 4개 유형 - CLUB 4개 유형 형태로 포맷
-        setFinalMbti(formatMbtiClubString(mbti));
+        // MBTI 4개 유형 - COLKLUB 4개 유형 형태로 포맷
+        setFinalMbti(formatMbtiColkString(mbti));
       }
 
       // 점수 객체로 변환
@@ -52,12 +52,12 @@ const ResultPage: React.FC = () => {
     }
   }, [router.isReady, router.query]);
 
-  // MBTI 4개 유형 - CLUB 4개 유형 형태로 포맷하는 함수
-  const formatMbtiClubString = (mbti: string): string => {
+  // MBTI 4개 유형 - COLK 4개 유형 형태로 포맷하는 함수
+  const formatMbtiColkString = (mbti: string): string => {
     if (mbti.length !== 8) return mbti; // 8글자가 아니면 그대로 반환 (오류 방지)
     const mbtiPart = mbti.substring(0, 4); // 앞 4글자
-    const clubPart = mbti.substring(4, 8); // 뒤 4글자
-    return `${mbtiPart}-${clubPart}`;
+    const colkPart = mbti.substring(4, 8); // 뒤 4글자
+    return `${mbtiPart}-${colkPart}`;
   };
 
   // 각 지표별 백분율 계산 함수
@@ -97,31 +97,31 @@ const ResultPage: React.FC = () => {
 
     // C vs H
     const cScore = currentScores['C'] || 0;
-    const hScore = currentScores['H'] || 0;
+    const hScore = currentScores['D'] || 0;
     const chDiff = cScore - hScore;
     calculated['C'] = Math.round(((chDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
-    calculated['H'] = 100 - calculated['C'];
+    calculated['D'] = 100 - calculated['C'];
 
     // L vs D
-    const lScore = currentScores['L'] || 0;
-    const dScore = currentScores['D'] || 0;
+    const lScore = currentScores['O'] || 0;
+    const dScore = currentScores['U'] || 0;
     const ldDiff = lScore - dScore;
-    calculated['L'] = Math.round(((ldDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
-    calculated['D'] = 100 - calculated['L'];
+    calculated['O'] = Math.round(((ldDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
+    calculated['U'] = 100 - calculated['O'];
 
     // U vs O (R 대신 O 사용)
-    const uScore = currentScores['U'] || 0;
-    const oScore = currentScores['O'] || 0; // 'R' 대신 'O' 점수를 사용
+    const uScore = currentScores['L'] || 0;
+    const oScore = currentScores['M'] || 0; // 'R' 대신 'O' 점수를 사용
     const uoDiff = uScore - oScore;
-    calculated['U'] = Math.round(((uoDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
-    calculated['O'] = 100 - calculated['U']; // 'R' 대신 'O' 백분율 계산
+    calculated['L'] = Math.round(((uoDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
+    calculated['M'] = 100 - calculated['L']; // 'R' 대신 'O' 백분율 계산
 
     // B vs M
-    const bScore = currentScores['B'] || 0;
-    const mScore = currentScores['M'] || 0;
+    const bScore = currentScores['K'] || 0;
+    const mScore = currentScores['B'] || 0;
     const bmDiff = bScore - mScore;
-    calculated['B'] = Math.round(((bmDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
-    calculated['M'] = 100 - calculated['B'];
+    calculated['K'] = Math.round(((bmDiff + maxPossibleScorePerDimension) / totalRangePerDimension) * 100);
+    calculated['B'] = 100 - calculated['K'];
 
     return calculated;
   };
@@ -140,10 +140,10 @@ const ResultPage: React.FC = () => {
     { primary: 'S', secondary: 'N', primaryLabel: '감각형', secondaryLabel: '직관형' },
     { primary: 'T', secondary: 'F', primaryLabel: '사고형', secondaryLabel: '감정형' },
     { primary: 'J', secondary: 'P', primaryLabel: '계획형', secondaryLabel: '융통형' },
-    { primary: 'C', secondary: 'H', primaryLabel: '순화적 언어', secondaryLabel: '공격적 언어' },
-    { primary: 'L', secondary: 'D', primaryLabel: '공감적 대화', secondaryLabel: '설교적 대화' },
-    { primary: 'U', secondary: 'O', primaryLabel: '능청적 반응', secondaryLabel: '과민적 반응' }, // R 대신 O로 변경
-    { primary: 'B', secondary: 'M', primaryLabel: '당당한 태도', secondaryLabel: '찌질한 태도' },
+    { primary: 'C', secondary: 'D', primaryLabel: '당당한 태도', secondaryLabel: '찌질한 태도' },
+    { primary: 'O', secondary: 'U', primaryLabel: '능청적 반응', secondaryLabel: '과민적 반응' },
+    { primary: 'L', secondary: 'M', primaryLabel: '공감적 대화', secondaryLabel: '일방적 대화' }, // R 대신 O로 변경
+    { primary: 'K', secondary: 'B', primaryLabel: '순화적 말투', secondaryLabel: '공격적 말투' },
   ];
 
   return (
@@ -161,8 +161,8 @@ const ResultPage: React.FC = () => {
       }}
     >
       <Head>
-        <title>MBTI Club Test Result</title>
-        <meta name="description" content="MBTI Club personality test result" />
+        <title>MBTI COLK Test Result</title>
+        <meta name="description" content="MBTI Colk personality test result" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
