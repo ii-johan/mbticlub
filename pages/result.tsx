@@ -140,9 +140,9 @@ const ResultPage: React.FC = () => {
     { primary: 'S', secondary: 'N', primaryLabel: '감각형', secondaryLabel: '직관형' },
     { primary: 'T', secondary: 'F', primaryLabel: '사고형', secondaryLabel: '감정형' },
     { primary: 'J', secondary: 'P', primaryLabel: '계획형', secondaryLabel: '융통형' },
-    { primary: 'C', secondary: 'D', primaryLabel: '당당한 태도', secondaryLabel: '찌질한 태도' },
-    { primary: 'O', secondary: 'U', primaryLabel: '능청적 반응', secondaryLabel: '과민적 반응' },
-    { primary: 'L', secondary: 'M', primaryLabel: '공감적 대화', secondaryLabel: '일방적 대화' }, // R 대신 O로 변경
+    { primary: 'C', secondary: 'D', primaryLabel: '주도적 태도', secondaryLabel: '순응적 태도' },
+    { primary: 'O', secondary: 'U', primaryLabel: '여유적 반응', secondaryLabel: '과민적 반응' },
+    { primary: 'L', secondary: 'M', primaryLabel: '공감적 대화', secondaryLabel: '일방적 대화' }, 
     { primary: 'K', secondary: 'B', primaryLabel: '순화적 말투', secondaryLabel: '공격적 말투' },
   ];
 

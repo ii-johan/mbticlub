@@ -39,7 +39,7 @@ const Home: React.FC = () => {
           alignItems: 'center',
           backgroundColor: 'rgba(0, 0, 0, 0.4)', // 카드 배경
           borderRadius: '30px',
-          padding: '10px',
+          padding: '20px',
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.4)',
           maxWidth: '520px',
           width: '70%',
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
         {/* 제목 */}
         <h1
           style={{
-            fontSize: '2.5rem',
+            fontSize: '2rem',
             fontWeight: 'bold',
             color: '#KKKFFF',
             marginBottom: '5px',
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
               fontWeight: 'bold',
               color: '#FFFFFF',
               // 새로운 그라데이션 및 그림자
-              background: 'linear-gradient(135deg,rgb(147, 228, 159) 0%,rgb(179, 240, 151) 100%)', // 시원한 파란색 그라데이션
+              background: 'linear-gradient(135deg,rgb(53, 96, 60) 0%,rgb(100, 148, 78) 100%)', // 시원한 파란색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
@@ -132,7 +132,7 @@ const Home: React.FC = () => {
               e.currentTarget.style.transform = 'scale(1.03)'; // 클릭 후 원복 (호버 상태로)
             }}
           >
-            Fast Test(40)
+            Start Now 80-Scan
           </button>
 
           {/* Full Test 버튼 */}
@@ -144,7 +144,7 @@ const Home: React.FC = () => {
               fontWeight: 'bold',
               color: '#FFFFFF',
               // 새로운 그라데이션 및 그림자
-              background: 'linear-gradient(135deg,rgb(75, 80, 79) 0%,rgb(76, 82, 80) 100%)', // 상큼한 초록색 그라데이션
+              background: 'linear-gradient(135deg,rgb(86, 86, 44) 0%,rgb(150, 152, 81) 100%)', // 상큼한 초록색 그라데이션
               border: 'none',
               borderRadius: '12px',
               cursor: 'pointer',
@@ -168,7 +168,7 @@ const Home: React.FC = () => {
               e.currentTarget.style.transform = 'scale(1.03)';
             }}
           >
-            Slow Test(80)
+            Check My Colk Style
           </button>
         </div>
       </main>
